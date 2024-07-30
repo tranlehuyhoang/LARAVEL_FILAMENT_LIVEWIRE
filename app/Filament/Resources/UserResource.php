@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
+use App\Filament\Resources\UserResource\RelationManagers\OrdersRelationManager;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -78,7 +79,7 @@ class UserResource extends Resource
                 // Add filters if needed
             ])
             ->actions([
-                    Tables\Actions\ActionGroup::make([
+                Tables\Actions\ActionGroup::make([
                     Tables\Actions\EditAction::make(),   // Hành động chỉnh sửa
                     Tables\Actions\ViewAction::make(),   // Hành động xem
                     Tables\Actions\DeleteAction::make(), // Hành động xóa
@@ -94,7 +95,7 @@ class UserResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            OrdersRelationManager::class,
         ];
     }
 
