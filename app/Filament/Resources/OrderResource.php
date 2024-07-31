@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Illuminate\Database\Eloquent\Collection;
 use App\Filament\Resources\OrderResource\Pages;
 use App\Filament\Resources\OrderResource\RelationManagers;
 use App\Filament\Resources\OrderResource\RelationManagers\AddressRelationManager;
@@ -21,6 +22,8 @@ use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Form;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
+use Filament\Tables\Actions\BulkAction;
+use Filament\Tables\Actions\BulkActionGroup;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\SelectColumn;
@@ -200,7 +203,7 @@ class OrderResource extends Resource
                         'processing' => "Processing",
                         'shipped' => "Shipped",
                         'delivered' => "Delivered",
-                        'cancelled' => "Cancelled",
+                        'canceled' => "Cancelled",
                     ]),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -221,10 +224,10 @@ class OrderResource extends Resource
                     Tables\Actions\DeleteAction::make(),
                 ])
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+            ->groupedBulkActions([
+                BulkAction::make('delete')
+                    ->action(fn (Collection $records) => $records->each->delete())
+                    ->deselectRecordsAfterCompletion()
             ]);
     }
 

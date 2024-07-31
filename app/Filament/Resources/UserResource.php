@@ -19,7 +19,8 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-
+    protected static ?string $recordTitleAttribute = 'name';
+    protected static ?int $navigationSort = 5;
     public static function form(Form $form): Form
     {
         return $form
@@ -98,7 +99,14 @@ class UserResource extends Resource
             OrdersRelationManager::class,
         ];
     }
-
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['email', 'name'];
+    }
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
     public static function getPages(): array
     {
         return [

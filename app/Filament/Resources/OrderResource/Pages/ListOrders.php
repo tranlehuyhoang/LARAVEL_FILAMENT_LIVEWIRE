@@ -2,12 +2,11 @@
 
 namespace App\Filament\Resources\OrderResource\Pages;
 
-use Filament\Infolists\Components\Tabs;
 use App\Filament\Resources\OrderResource;
 use App\Filament\Resources\OrderResource\Widgets\OrderStats;
 use App\Models\Order;
 use Filament\Actions;
-
+use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
@@ -27,6 +26,22 @@ class ListOrders extends ListRecords
     {
         return [
             OrderStats::class
+        ];
+    }
+    public function getTabs(): array
+    {
+        return [
+            'all' => Tab::make(),
+            'new' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'new')),
+            'processing' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'processing')),
+            'shipped' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'shipped')),
+            'delivered' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'delivered')),
+            'canceled' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'canceled')),
         ];
     }
 }
