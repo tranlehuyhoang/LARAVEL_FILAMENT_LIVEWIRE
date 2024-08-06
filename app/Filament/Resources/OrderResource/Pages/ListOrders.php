@@ -31,16 +31,16 @@ class ListOrders extends ListRecords
     public function getTabs(): array
     {
         return [
-            'all' => Tab::make(),
-            'new' => Tab::make()
+            'all' => Tab::make('Tất cả'),
+            'new' => Tab::make('Mới')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'new')),
-            'processing' => Tab::make()
+            'processing' => Tab::make('Đang xử lý')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'processing')),
-            'shipped' => Tab::make()
+            'shipped' => Tab::make('Đã giao')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'shipped')),
-            'delivered' => Tab::make()
+            'delivered' => Tab::make('Đã nhận')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'delivered')),
-            'canceled' => Tab::make()
+            'canceled' => Tab::make('Đã hủy')
                 ->modifyQueryUsing(fn (Builder $query) => $query->where('status', 'canceled')),
         ];
     }

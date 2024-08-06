@@ -18,17 +18,20 @@ use Illuminate\Support\Str; // Add this line
 
 class BrandResource extends Resource
 {
+    public static function getPluralModelLabel(): string
+    {
+        return 'Thương hiệu';
+    }
     protected static ?string $model = Brand::class;
-
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-
                 Forms\Components\TextInput::make('name')
+                    ->label('Tên danh mục')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
@@ -37,14 +40,17 @@ class BrandResource extends Resource
                         $operation === 'create' ? $set('slug', Str::slug($state)) : null,
                     ),
                 Forms\Components\TextInput::make('slug')
+                    ->label('Slug')
                     ->maxLength(255)
                     ->disabled()
                     ->required()
                     ->dehydrated()
                     ->unique(Category::class, 'slug', ignoreRecord: true),
                 Forms\Components\FileUpload::make('image')
+                    ->label('Hình ảnh')
                     ->image(),
                 Forms\Components\Toggle::make('is_active')
+                    ->label('Kích hoạt')
                     ->required(),
             ]);
     }
@@ -54,33 +60,45 @@ class BrandResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Tên danh mục')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
+                    ->label('Slug')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Hình ảnh'),
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Kích hoạt')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Ngày tạo')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Ngày cập nhật')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                // Các bộ lọc nếu cần
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make()->label('Xem'),
+                    Tables\Actions\EditAction::make()->label('Sửa'),
+                    Tables\Actions\DeleteAction::make()->label('Xóa'),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('Xóa'),
                 ]),
             ]);
     }
+
 
     public static function getRelations(): array
     {

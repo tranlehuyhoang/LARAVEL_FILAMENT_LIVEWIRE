@@ -20,9 +20,13 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-cube';
     protected static ?string $recordTitleAttribute = 'name';
     protected static ?int $navigationSort = 6;
+    public static function getPluralModelLabel(): string
+    {
+        return 'Sản phẩm';
+    }
     public static function form(Form $form): Form
     {
         return $form
@@ -30,11 +34,11 @@ class ProductResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Select::make('category_id')
-                            ->label('Category')
+                            ->label('Danh mục')
                             ->options(Category::all()->pluck('name', 'id'))
                             ->required(),
                         Forms\Components\Select::make('brand_id')
-                            ->label('Brand')
+                            ->label('Thương hiệu')
                             ->options(Brand::all()->pluck('name', 'id'))
                             ->required(),
                     ])
@@ -43,6 +47,7 @@ class ProductResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
+                            ->label('Tên sản phẩm')
                             ->required()
                             ->maxLength(255)
                             ->live(onBlur: true)
@@ -51,6 +56,7 @@ class ProductResource extends Resource
                                 $operation === 'create' ? $set('slug', Str::slug($state)) : null,
                             ),
                         Forms\Components\TextInput::make('slug')
+                            ->label('Slug')
                             ->maxLength(255)
                             ->disabled()
                             ->required()
@@ -62,12 +68,15 @@ class ProductResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\FileUpload::make('images')
+                            ->label('Hình ảnh')
                             ->image()
                             ->multiple()
                             ->directory('product-images'),
                         Forms\Components\RichEditor::make('description')
+                            ->label('Mô tả')
                             ->required(),
                         Forms\Components\TextInput::make('price')
+                            ->label('Giá')
                             ->required()
                             ->numeric()
                             ->minValue(0)
@@ -78,10 +87,14 @@ class ProductResource extends Resource
                 Forms\Components\Section::make()
                     ->schema([
                         Forms\Components\Toggle::make('is_active')
+                            ->label('Kích hoạt')
                             ->required(),
-                        Forms\Components\Toggle::make('is_featured'),
-                        Forms\Components\Toggle::make('in_stock'),
-                        Forms\Components\Toggle::make('on_sale'),
+                        Forms\Components\Toggle::make('is_featured')
+                            ->label('Nổi bật'),
+                        Forms\Components\Toggle::make('in_stock')
+                            ->label('Còn hàng'),
+                        Forms\Components\Toggle::make('on_sale')
+                            ->label('Khuyến mãi'),
                     ])
                     ->columns(2),
             ]);
@@ -92,70 +105,72 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Tên sản phẩm')
                     ->searchable()
-                    ->sortable()
-                    ->label('Name'),
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('category.name')
+                    ->label('Danh mục')
                     ->searchable()
-                    ->sortable()
-                    ->label('Category'),
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('brand.name')
+                    ->label('Thương hiệu')
                     ->searchable()
-                    ->sortable()
-                    ->label('Brand'),
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('price')
+                    ->label('Giá')
                     ->searchable()
                     ->sortable()
-                    ->money('USD', true) // Hiển thị tiền tệ nếu cần
-                    ->label('Price'),
+                    ->money('USD', true), // Hiển thị tiền tệ nếu cần
 
                 Tables\Columns\IconColumn::make('is_active')
+                    ->label('Kích hoạt')
                     ->boolean()
                     ->searchable()
-                    ->sortable()
-                    ->label('Active'),
+                    ->sortable(),
 
                 Tables\Columns\IconColumn::make('is_featured')
+                    ->label('Nổi bật')
                     ->boolean()
-                    ->label('Featured')
                     ->toggleable(isToggledHiddenByDefault: true), // Ẩn cột khi bắt đầu
 
                 Tables\Columns\IconColumn::make('in_stock')
+                    ->label('Còn hàng')
                     ->boolean()
-                    ->label('In Stock')
                     ->toggleable(isToggledHiddenByDefault: true), // Ẩn cột khi bắt đầu
 
                 Tables\Columns\IconColumn::make('on_sale')
+                    ->label('Khuyến mãi')
                     ->boolean()
-                    ->label('On Sale')
                     ->toggleable(isToggledHiddenByDefault: true), // Ẩn cột khi bắt đầu
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('brand_id')
                     ->options(Brand::all()->pluck('name', 'id'))
-                    ->label('Brand'),
+                    ->label('Thương hiệu'),
 
                 Tables\Filters\SelectFilter::make('category_id')
                     ->options(Category::all()->pluck('name', 'id'))
-                    ->label('Category'),
+                    ->label('Danh mục'),
             ])
             ->actions([
-                // Thêm hành động "View"
-                Tables\Actions\ViewAction::make(),
-                // Thêm hành động "Edit"
-                Tables\Actions\EditAction::make(),
-                // Thêm hành động "Delete"
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ViewAction::make()
+                    ->label('Xem'),
+                Tables\Actions\EditAction::make()
+                    ->label('Chỉnh sửa'),
+                Tables\Actions\DeleteAction::make()
+                    ->label('Xóa'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('Xóa'),
                 ]),
             ]);
     }
+
 
 
     public static function getRelations(): array

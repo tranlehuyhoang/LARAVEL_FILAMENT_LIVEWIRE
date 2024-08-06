@@ -19,19 +19,19 @@ class OrderStats extends BaseWidget
         $totalAmount = Order::sum('grand_total'); // Assuming the column name is 'total_amount'
 
         return [
-            Stat::make('New Orders', $newOrdersCount)
+            Stat::make('Đơn hàng mới', $newOrdersCount)
                 ->icon('heroicon-o-truck')
                 ->color('success'),
 
-            Stat::make('Processing Orders', $processingOrdersCount)
+            Stat::make('Đơn hàng đang xử lý', $processingOrdersCount)
                 ->icon('heroicon-o-cog') // Choose an appropriate icon
                 ->color('warning'),
 
-            Stat::make('Shipped Orders', $shippedOrdersCount)
+            Stat::make('Đơn hàng đã vận chuyển', $shippedOrdersCount)
                 ->icon('heroicon-o-check-circle') // Choose an appropriate icon
                 ->color('primary'),
 
-            Stat::make('Total Amount', '$' . number_format($totalAmount, 2)) // Format amount as currency
+            Stat::make('Tổng tiền', 'đ' . number_format($totalAmount, 2)) // Format amount as currency
                 ->icon('heroicon-o-credit-card') // Choose an appropriate icon
                 ->color('info'),
         ];

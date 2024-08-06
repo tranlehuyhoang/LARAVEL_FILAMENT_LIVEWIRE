@@ -38,47 +38,55 @@ class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-cart';
+    public static function getPluralModelLabel(): string
+    {
+        return 'Đơn hàng';
+    }
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Group::make()->schema([
-                    Section::make("Order Infomation")->schema([
+                    Section::make("Thông tin đơn hàng")->schema([
                         Select::make('user_id')
-                            ->label("Customer")
+                            ->label("Khách hàng")
                             ->relationship('user', 'name')
                             ->searchable()
                             ->preload()
                             ->required(),
 
                         Select::make('payment_method')
+                            ->label("Phương thức thanh toán")
                             ->options([
-                                'stripe' => "Strip",
-                                'cod' => "Cash on Delivery",
-                            ])->required()
+                                'stripe' => "Stripe",
+                                'cod' => "Thanh toán khi nhận hàng",
+                            ])
+                            ->required()
                             ->preload()
                             ->searchable(),
 
                         Select::make('payment_status')
+                            ->label("Trạng thái thanh toán")
                             ->options([
-                                'pending' => "Pending",
-                                'paid' => "Paid",
-                                'failed' => "Failed",
+                                'pending' => "Đang chờ",
+                                'paid' => "Đã thanh toán",
+                                'failed' => "Thất bại",
                             ])
                             ->default('pending')
                             ->required(),
+
                         ToggleButtons::make('status')
+                            ->label('Trạng thái đơn hàng')
                             ->inline()
                             ->default('new')
                             ->required()
                             ->options([
-                                'new' => "New",
-                                'processing' => "Processing",
-                                'shipped' => "Shipped",
-                                'delivered' => "Delivered",
-                                'cancelled' => "Cancelled",
+                                'new' => "Mới",
+                                'processing' => "Đang xử lý",
+                                'shipped' => "Đã giao",
+                                'delivered' => "Đã nhận",
+                                'cancelled' => "Đã hủy",
                             ])
                             ->colors([
                                 'new' => "info",
@@ -96,6 +104,7 @@ class OrderResource extends Resource
                             ]),
 
                         Select::make('currency')
+                            ->label("Tiền tệ")
                             ->options([
                                 'vnd' => "VND",
                                 'usd' => "USD",
@@ -104,21 +113,25 @@ class OrderResource extends Resource
                             ->required(),
 
                         Select::make('shipping_method')
+                            ->label("Phương thức vận chuyển")
                             ->options([
-                                'ghn' => "Giao Hang Nhanh",
-                                "express" => "Express"
+                                'ghn' => "Giao Hàng Nhanh",
+                                "express" => "Chuyển phát nhanh"
                             ])
                             ->default('ghn')
                             ->required(),
+
                         MarkdownEditor::make('notes')
+                            ->label("Ghi chú")
                             ->fileAttachmentsDirectory('notes')
                     ])->columns(2),
 
-                    Section::make("Order Items")->schema([
+                    Section::make("Sản phẩm trong đơn hàng")->schema([
                         Repeater::make('orderItems') // tên trường cho repeater + relationship
                             ->relationship() //relationship() giúp Filament hiểu rằng các mục trong Repeater là các bản ghi con của mô hình chính và cần được xử lý theo cách đó.
                             ->schema([
                                 Select::make('product_id')
+                                    ->label('Sản phẩm')
                                     ->relationship('product', 'name')
                                     ->searchable()
                                     ->required()
@@ -130,6 +143,7 @@ class OrderResource extends Resource
                                     ->columnSpan(4),
 
                                 TextInput::make('quantity')
+                                    ->label('Số lượng')
                                     ->numeric()
                                     ->required()
                                     ->default(1)
@@ -137,19 +151,24 @@ class OrderResource extends Resource
                                     ->reactive()
                                     ->afterStateUpdated(fn ($state, Set $set, Get $get) => $set('total_amount', $state * $get('unit_amount')))
                                     ->columnSpan(2),
+
                                 TextInput::make('unit_amount')
+                                    ->label('Đơn giá')
                                     ->numeric()
                                     ->required()
                                     ->disabled()
                                     ->dehydrated()
                                     ->columnSpan(3),
+
                                 TextInput::make('total_amount')
+                                    ->label('Tổng giá')
                                     ->numeric()
                                     ->required()
                                     ->columnSpan(3),
                             ])->columns(12),
+
                         Placeholder::make('grand_total_placecholder')
-                            ->label('Grand Total')
+                            ->label('Tổng cộng')
                             ->content(function (Get $get, Set $set) {
                                 $total = 0;
                                 if ($repeaters = $get('orderItems')) {
@@ -160,76 +179,80 @@ class OrderResource extends Resource
                                 $set('grand_total', $total);
                                 return Number::currency($total, 'VND');
                             }),
+
                         Hidden::make('grand_total')
                             ->default(0),
-
-
-
-
                     ]),
-
                 ])->columnSpanFull()
-
             ]);
     }
+
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
                 TextColumn::make('user.name') //user relationship
-                    ->label('Customer')
+                    ->label('Khách hàng')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('grand_total')
                     ->numeric()
                     ->sortable()
-                    ->money('VND'),
+                    ->money('VND')
+                    ->label('Tổng cộng'),
                 TextColumn::make('payment_method')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->label('Phương thức thanh toán'),
                 TextColumn::make('payment_status')
                     ->sortable()
-                    ->searchable(),
+                    ->searchable()
+                    ->label('Trạng thái thanh toán'),
                 TextColumn::make('currency')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->label('Tiền tệ'),
                 TextColumn::make('shipping_method')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->label('Phương thức vận chuyển'),
                 SelectColumn::make('status')
+                    ->label('Trạng thái')
                     ->options([
-                        'new' => "New",
-                        'processing' => "Processing",
-                        'shipped' => "Shipped",
-                        'delivered' => "Delivered",
-                        'canceled' => "Cancelled",
+                        'new' => "Mới",
+                        'processing' => "Đang xử lý",
+                        'shipped' => "Đã giao",
+                        'delivered' => "Đã nhận",
+                        'canceled' => "Đã hủy",
                     ]),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated-at')
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Ngày tạo'),
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-
-
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label('Ngày cập nhật'),
             ])
             ->filters([])
             ->actions([
                 Tables\Actions\ActionGroup::make([
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make(),
+                    Tables\Actions\ViewAction::make()->label('Xem'),
+                    Tables\Actions\EditAction::make()->label('Sửa'),
+                    Tables\Actions\DeleteAction::make()->label('Xóa'),
                 ])
             ])
             ->groupedBulkActions([
                 BulkAction::make('delete')
+                    ->label('Xóa')
                     ->action(fn (Collection $records) => $records->each->delete())
                     ->deselectRecordsAfterCompletion()
             ]);
     }
+
 
     public static function getRelations(): array
     {
