@@ -20,33 +20,34 @@ class AddressRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('street_address')
+                    ->label('Địa chỉ đường phố') // Street Address
                     ->required()
                     ->maxLength(255),
-                TextInput::make('first_name')
+                Forms\Components\TextInput::make('first_name')
+                    ->label('Tên') // First Name
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make('last_name')
+                Forms\Components\TextInput::make('last_name')
+                    ->label('Họ') // Last Name
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make('phone')
+                Forms\Components\TextInput::make('phone')
+                    ->label('Số điện thoại') // Phone
                     ->required()
                     ->tel()
                     ->maxLength(20),
-
-                TextInput::make('city')
+                Forms\Components\TextInput::make('city')
+                    ->label('Thành phố') // City
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make('state')
+                Forms\Components\TextInput::make('state')
+                    ->label('Tỉnh/Thành phố') // State
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make('zip_code')
+                Forms\Components\TextInput::make('zip_code')
+                    ->label('Mã bưu điện') // Zip Code
                     ->numeric()
                     ->maxLength(10),
-
             ]);
     }
 
@@ -55,27 +56,38 @@ class AddressRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('street_address')
             ->columns([
-                Tables\Columns\TextColumn::make('street_address'),
-                Tables\Columns\TextColumn::make('first_name'),
-                Tables\Columns\TextColumn::make('last_name'),
-                Tables\Columns\TextColumn::make('phone'),
-                Tables\Columns\TextColumn::make('city'),
-                Tables\Columns\TextColumn::make('state'),
-                Tables\Columns\TextColumn::make('zip_code'),
+                Tables\Columns\TextColumn::make('street_address')
+                    ->label('Địa chỉ đường phố'), // Street Address
+                Tables\Columns\TextColumn::make('first_name')
+                    ->label('Tên'), // First Name
+                Tables\Columns\TextColumn::make('last_name')
+                    ->label('Họ'), // Last Name
+                Tables\Columns\TextColumn::make('phone')
+                    ->label('Số điện thoại'), // Phone
+                Tables\Columns\TextColumn::make('city')
+                    ->label('Thành phố'), // City
+                Tables\Columns\TextColumn::make('state')
+                    ->label('Tỉnh/Thành phố'), // State
+                Tables\Columns\TextColumn::make('zip_code')
+                    ->label('Mã bưu điện'), // Zip Code
             ])
             ->filters([
-                //
+                // Add filters if needed
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()
+                    ->label('Tạo'), // Create
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->label('Chỉnh sửa'), // Edit
+                Tables\Actions\DeleteAction::make()
+                    ->label('Xóa'), // Delete
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('Xóa'), // Delete
                 ]),
             ]);
     }

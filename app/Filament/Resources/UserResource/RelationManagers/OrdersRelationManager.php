@@ -31,42 +31,44 @@ class OrdersRelationManager extends RelationManager
             ->recordTitleAttribute('id')
             ->columns([
                 Tables\Columns\TextColumn::make('id')
-                    ->label('Order ID')
+                    ->label('Mã đơn hàng') // Order ID
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->label('Status')
+                    ->label('Trạng thái') // Status
                     ->badge(),
-                TextColumn::make('payment_method')
+                Tables\Columns\TextColumn::make('payment_method')
+                    ->label('Phương thức thanh toán') // Payment Method
                     ->sortable()
                     ->searchable(),
-                TextColumn::make('payment_status')
+                Tables\Columns\TextColumn::make('payment_status')
+                    ->label('Trạng thái thanh toán') // Payment Status
                     ->sortable()
                     ->searchable(),
-
-                TextColumn::make('shipping_method')
+                Tables\Columns\TextColumn::make('shipping_method')
+                    ->label('Phương thức giao hàng') // Shipping Method
                     ->searchable()
                     ->sortable(),
-
-                TextColumn::make('created_at')
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Ngày tạo') // Created At
                     ->dateTime()
                     ->sortable()
-
             ])
             ->filters([
-                //
+                // Add filters if needed
             ])
             ->headerActions([])
             ->actions([
-
-                Action::make('View Order')
+                Tables\Actions\Action::make('Xem đơn hàng') // View Order
                     ->url(fn (Order $record): string => OrderResource::getUrl('view', ['record' => $record]))
                     ->color('info')
                     ->icon('heroicon-o-eye'),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\DeleteAction::make()
+                    ->label('Xóa') // Delete
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+                    Tables\Actions\DeleteBulkAction::make()
+                        ->label('Xóa') // Delete
                 ]),
             ]);
     }

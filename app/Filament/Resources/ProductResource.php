@@ -61,7 +61,7 @@ class ProductResource extends Resource
                             ->disabled()
                             ->required()
                             ->dehydrated()
-                            ->unique(Category::class, 'slug', ignoreRecord: true),
+                            ->unique(Product::class, 'slug', ignoreRecord: true),
                     ])
                     ->columns(1),
 
@@ -123,7 +123,7 @@ class ProductResource extends Resource
                     ->label('Giá')
                     ->searchable()
                     ->sortable()
-                    ->money('USD', true), // Hiển thị tiền tệ nếu cần
+                    ->money('VND', true), // Hiển thị tiền tệ nếu cần
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('Kích hoạt')
