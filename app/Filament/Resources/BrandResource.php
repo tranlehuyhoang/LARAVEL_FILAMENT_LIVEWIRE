@@ -35,17 +35,19 @@ class BrandResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
-                    ->afterStateUpdated(
-                        fn (string $operation, $state, Set $set) =>
-                        $operation === 'create' ? $set('slug', Str::slug($state)) : null,
-                    ),
+                    ->afterStateUpdated(function (string $operation, $state, Set $set) {
+                        if ($operation === 'create' || $operation === 'update') {
+                            $set('slug', Str::slug($state));
+                        }
+                    }),
+
                 Forms\Components\TextInput::make('slug')
                     ->label('Slug')
                     ->maxLength(255)
                     ->disabled()
                     ->required()
                     ->dehydrated()
-                    ->unique(Category::class, 'slug', ignoreRecord: true),
+                    ->unique(Brand::class, 'slug', ignoreRecord: true),
                 Forms\Components\FileUpload::make('image')
                     ->label('Hình ảnh')
                     ->image(),

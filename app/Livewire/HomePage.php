@@ -12,11 +12,15 @@ class HomePage extends Component
 {
     public function render()
     {
-        // Lấy tất cả các thương hiệu hoạt động
-        $brands = Brand::where('is_active', 1)->get();
+        // Lấy tất cả các thương hiệu hoạt động với các cột cần thiết
+        $brands = Brand::where('is_active', 1)
+            ->select('id', 'name', 'slug')
+            ->get();
 
-        // Lấy tất cả các danh mục hoạt động
-        $categories = Category::where('is_active', 1)->get();
+        // Lấy tất cả các danh mục hoạt động với các cột cần thiết
+        $categories = Category::where('is_active', 1)
+            ->select('id', 'name', 'slug')
+            ->get();
 
         // Truyền dữ liệu vào view
         return view('livewire.home-page', [
