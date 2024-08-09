@@ -9,9 +9,11 @@ use App\Models\Brand;
 use App\Models\Category;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class ProductsPage extends Component
 {
+    use LivewireAlert;
     use WithPagination;
 
     public $perPage = 2; // Number of items per page
@@ -23,6 +25,7 @@ class ProductsPage extends Component
         $this->dispatch('update-cart-count', [
             'total_count' => ($total_count),
         ])->to(Navbar::class);
+        $this->alert('success', 'Thêm sản phẩm thành công');
     }
     public function render()
     {
