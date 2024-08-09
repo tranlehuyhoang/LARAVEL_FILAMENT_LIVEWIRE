@@ -2,6 +2,8 @@
 
 namespace App\Livewire;
 
+use App\Helpers\CartManagement;
+use App\Livewire\Partials\Navbar;
 use App\Models\Product;
 use App\Models\Brand;
 use App\Models\Category;
@@ -15,7 +17,13 @@ class ProductsPage extends Component
     public $perPage = 2; // Number of items per page
     public $selected_categories = []; // Selected categories for filtering
     public $selected_brands = []; // Selected brands for filtering
-
+    public function addToCart($product_id)
+    {
+        $total_count = CartManagement::addItemToCart($product_id);
+        $this->dispatch('update-cart-count', [
+            'total_count' => ($total_count),
+        ])->to(Navbar::class);
+    }
     public function render()
     {
         $query = Product::where('is_active', 1);
