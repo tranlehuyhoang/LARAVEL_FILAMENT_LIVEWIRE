@@ -11,6 +11,7 @@ use App\Livewire\CategoriesPage;
 use App\Livewire\CheckoutPage;
 use App\Livewire\ChinhSachBaoHanh;
 use App\Livewire\ChiTietSanPham;
+use App\Livewire\DanhMucSanPham;
 use App\Livewire\GioHang;
 use App\Livewire\GioiThieu;
 use App\Livewire\HomePage;
@@ -36,7 +37,8 @@ Route::get('/chinh-sach/huong-dan-thanh-toan', HuongDanThanhToan::class);
 Route::get('/tin-tuc', TinTuc::class);
 Route::get('/lien-he', LienHe::class);
 Route::get('/gio-hang', GioHang::class);
-Route::get('/san-pham/{slug}', ChiTietSanPham::class);
+Route::get('/san-pham/{category}', DanhMucSanPham::class);
+Route::get('/san-pham/{category}/{slug}', ChiTietSanPham::class);
 Route::get('/tim-kiem', TimKiem::class);
 
 

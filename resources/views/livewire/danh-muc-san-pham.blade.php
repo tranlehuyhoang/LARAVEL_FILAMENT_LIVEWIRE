@@ -48,248 +48,46 @@
     <div class="form-group"></div>
     <div class="container">
 
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="/san-pham">Sản phẩm</a></li>
-            <li class="breadcrumb-item"><a href="/san-pham/man-hinh">M&#192;N H&#204;NH</a></li>
-            <li class="breadcrumb-item"><span>M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch</span></li>
-        </ol>
-
         <div class="row">
             @livewire('partials.sidebar')
             <div class="col-md-9" id="secondDiv">
 
 
-                <link href="https://www.vitinhtrongthuy.com/assets/frontend/js/magnific/magnific-popup.css?v=1"
-                    rel="stylesheet" />
                 <style>
-                .mfp-content {
-                    background: #fff;
-                }
-
-                .mfp-arrow {
-                    display: none !important;
+                .thumbnail {
+                    border-top: 1px solid #eee;
                 }
                 </style>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-sm-2">
-                                <div class="thumbnail"><a
-                                        href="javascript:ChangeIma('/Upload/Products/710a9eda-07e7-4f08-ba34-0e86040e6a19.webp')"><img
-                                            style='height:30px;width:30px;'
-                                            src="/Upload/Products/710a9eda-07e7-4f08-ba34-0e86040e6a19.webp"
-                                            class="img-responsive" /></a></div>
-                                <div class="thumbnail">
-                                    <a
-                                        href="javascript:ChangeIma('/Upload/Products/ab965a83-4829-4611-b23a-512dc21d37de.jpg')"><img
-                                            id="cc-1207"
-                                            onerror="javascript:this.src='/Upload/Products/ab965a83-4829-4611-b23a-512dc21d37de.jpg'"
-                                            src="/Upload/Products/medium/ab965a83-4829-4611-b23a-512dc21d37de.jpg"
-                                            alt="M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch"
-                                            class="img-responsive" style='height:30px;width:30px;' /></a>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-10">
-                                <div class="popup-gallery">
-                                    <div class="thumbnail">
-                                        <a class="a" id="detail-img"
-                                            title="M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch"
-                                            href="/Upload/Products/710a9eda-07e7-4f08-ba34-0e86040e6a19.webp"><img
-                                                id="detail-img1"
-                                                src="/Upload/Products/710a9eda-07e7-4f08-ba34-0e86040e6a19.webp"
-                                                class="img-responsive" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h1 class="ttchitietsap">
-                            M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch
-                        </h1>
-                        <div class="region-rpce">
-                            <b>Giá: </b>
-                            <span class="price">2,200,000 VNĐ</span>
-                            <span class="old-prc hide">2,200,000 VNĐ</span>
-                        </div>
-                        <div class="sum-detail">
-                            <table class="table">
-                                <tr>
-                                    <td class="text-right" style="width:90%;">
-                                        <div class="fb-like-wrap">
-                                            <div id="fb-root"></div>
-                                            <script>
-                                            (function(d, s, id) {
-                                                var js, fjs = d.getElementsByTagName(s)[0];
-                                                if (d.getElementById(id)) return;
-                                                js = d.createElement(s);
-                                                js.id = id;
-                                                js.src =
-                                                    "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=142391655885110&version=v2.3";
-                                                fjs.parentNode.insertBefore(js, fjs);
-                                            }(document, 'script', 'facebook-jssdk'));
-                                            </script>
-                                            <div class="fb-like"
-                                                data-href="https://www.vitinhtrongthuy.com/san-pham/man-hinh/man-hinh-gaming-e-dra-egm24f75-24-inch"
-                                                data-layout="button_count" data-action="like" data-show-faces="true"
-                                                data-share="true"></div>
-
-
-
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        <div class="g-plus" data-action="share" data-annotation="bubble"></div>
-                                        <script src="https://apis.google.com/js/platform.js" async defer>
-                                        {
-                                            lang: 'vi'
-                                        }
-                                        </script>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td class="text-right" style="width:130px">
-                                        <input type="number" id="txtnumcart" class="form-control" value="1" min="1"
-                                            max="100" />
-                                    </td>
-                                    <td class="text-right" style="padding-left:10px;">
-                                        <button type="button" class="btn btn-primary"
-                                            onclick="AddShopCart('879', 'M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch', '2200000', $('#txtnumcart').val())"><i
-                                                class="fa fa-shopping-cart"></i> Đặt hàng</button>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="motasoluot">
-                                <ul class="no-ul list-de">
-                                    <li>
-                                        <b>Tên máy: </b> <span>M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch</span>
-                                    </li>
-                                    <li>
-                                        <b>Model:</b> <span>M&#224;n h&#236;nh Gaming E-DRA EGM24F75 24 inch</span>
-                                    </li>
-                                    <li>
-                                        <b>Giá: </b><span class="text-danger"><b>2,200,000đ</b></span>
-                                    </li>
-                                    <li>
-                                        <b>Tình trạng:</b> <span>Mới </span>
-                                    </li>
-                                    <li>
-                                        <b>Bảo hành:</b> <span>12 th&#225;ng </span>
-                                    </li>
-                                    <li>
-                                        <b>Xuất xứ:</b> <span>Ch&#237;nh h&#227;ng</span>
-                                    </li>
-                                    <li>
-                                        <b>Kho hàng:</b> <span>20</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="title-d form-group">CPU - BỘ VI XỬ L&#221;</div>
+                <div class='thumbnail'>
+                    <div class='caption'></div>
                 </div>
-                <div class="reg-d form-group">
-                    <a class="reg-dtitle">Mô tả chung</a>
-                </div>
-                <div class="news-detail form-group">
-                    <p><strong>&nbsp;TH&Ocirc;NG SỐ CƠ BẢN:</strong></p>
-                    <ul>
-                        <li><strong>Kiểu d&aacute;ng m&agrave;n h&igrave;nh:</strong>&nbsp;Phẳng</li>
-                        <li><strong>Tỉ lệ khung h&igrave;nh:</strong>&nbsp;16:9</li>
-                        <li><strong>K&iacute;ch thước mặc định:</strong>&nbsp;23.8 inch</li>
-                        <li><strong>C&ocirc;ng nghệ tấm nền:</strong>&nbsp;IPS</li>
-                        <li><strong>Ph&acirc;n giải điểm ảnh:</strong>&nbsp;FHD (1920x1080)</li>
-                        <li><strong>Tần số qu&eacute;t m&agrave;n:</strong>&nbsp;100Hz</li>
-                        <li><strong>Thời gian đ&aacute;p ứng:</strong>&nbsp;1ms (MPRT)</li>
-                        <li><strong>Độ s&aacute;ng hiển thị:</strong>&nbsp;250cd/m2</li>
-                        <li><strong>Chỉ số m&agrave;u sắc:</strong>&nbsp;16.7 triệu m&agrave;u - 97%sRGB</li>
-                        <li><strong>Hỗ trợ ti&ecirc;u chuẩn:</strong>&nbsp;VESA (100 mm x 100 mm)</li>
-                        <li><strong>Cổng cắm kết nối:</strong>&nbsp;HDMI</li>
-                        <li><strong>Phụ kiện trong hộp:</strong>&nbsp;C&aacute;p nguồn, c&aacute;p HDMI</li>
-                    </ul>
-                </div>
-                <div class="reg-d form-group">
-                    <a class="reg-dtitle">Sản phẩm liên quan</a>
-                </div>
-                <div class="form-group"></div>
+
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-may-tinh-dell-p2717h-ips-27" class="img-products">
-
-                                <img width="193" height="193"
-                                    alt="M&#224;n h&#236;nh m&#225;y t&#237;nh Dell P2717H IPS - 27&quot;"
-                                    src="/Upload/Products/7459da75-7ac3-4b78-a1ed-2aa634b3e4b2.jpg?v=1"
-                                    class="img-responsive img-center" />
-                                <div class="sh">
-                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </a>
-                            <a href="/san-pham/man-hinh/man-hinh-may-tinh-dell-p2717h-ips-27" class="title-products">
-                                M&#224;n h&#236;nh m&#225;y t&#237;nh Dell P2717H IPS - 27&quot;
-                            </a>
-                            <div class="text-center">
-                                <div class="price-number">
-                                    2,900,000 VNĐ
-                                </div>
-                                <div class="old-price text-center hide">
-                                    2,900,000 VNĐ
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-50">
-                        <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-s22c450-22in" class="img-products">
-
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh Samsung S22C450  22in"
-                                    src="/Upload/Products/795a48ef-1b59-474e-b9e1-8a1908b7df7d.jpg?v=1"
-                                    class="img-responsive img-center" />
-                                <div class="sh">
-                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </a>
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-s22c450-22in" class="title-products">
-                                M&#224;n h&#236;nh Samsung S22C450 22in
-                            </a>
-                            <div class="text-center">
-                                <div class="price-number">
-                                    1,200,000 VNĐ
-                                </div>
-                                <div class="old-price text-center hide">
-                                    1,200,000 VNĐ
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-50">
-                        <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-may-tinh-infinity-v2423f-24-inch-fhd-100h"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-10105f-37ghz-turbo-up-to-44ghz,-"
                                 class="img-products">
 
                                 <img width="193" height="193"
-                                    alt="M&#192;N H&#204;NH M&#193;Y T&#205;NH INFINITY V2423F 24 INCH FHD 100HZ"
-                                    src="/Upload/Products/b7ae1e44-c824-4e21-818f-234f2250e611.jpeg?v=1"
+                                    alt="CPU Intel Core i3-10105F (3.7GHz turbo up to 4.4Ghz, 4 nh&#226;n 8 luồng, 6MB Cache, 65W) - Socket Intel LGA 1200"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/14364f33-dd80-47f4-bc58-297308eefa96.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-may-tinh-infinity-v2423f-24-inch-fhd-100h"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-10105f-37ghz-turbo-up-to-44ghz,-"
                                 class="title-products">
-                                M&#192;N H&#204;NH M&#193;Y T&#205;NH INFINITY V2423F 24 INCH FHD 100HZ
+                                CPU Intel Core i3-10105F (3.7GHz turbo up to 4.4Ghz, 4 nh&#226;n 8 luồng, 6MB Cache,
+                                65W) - Socket Intel LGA 1200
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    2,200,000 VNĐ
+                                    1,800,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    2,200,000 VNĐ
+                                    1,800,000 VNĐ
                                 </div>
                             </div>
 
@@ -297,27 +95,28 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-lcd-24″-msi-pro-mp241x-fhd-va-75hz-8ms"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-10400f-29ghz-turbo-up-to-43ghz,-"
                                 class="img-products">
 
                                 <img width="193" height="193"
-                                    alt="M&#224;n h&#236;nh LCD 24″ MSI Pro MP241X FHD VA 75Hz 8Ms "
-                                    src="/Upload/Products/7162387e-d348-4d19-83b8-1c4f4b4c8eba.jpg?v=1"
+                                    alt="CPU Intel Core i5-10400F (2.9GHz turbo up to 4.3Ghz, 6 nh&#226;n 12 luồng, 12MB Cache, 65W) - Socket Intel LGA 1200"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/f4f47e2f-3f8f-475a-9d0e-1ed4a0977fb8.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-lcd-24″-msi-pro-mp241x-fhd-va-75hz-8ms"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-10400f-29ghz-turbo-up-to-43ghz,-"
                                 class="title-products">
-                                M&#224;n h&#236;nh LCD 24″ MSI Pro MP241X FHD VA 75Hz 8Ms
+                                CPU Intel Core i5-10400F (2.9GHz turbo up to 4.3Ghz, 6 nh&#226;n 12 luồng, 12MB Cache,
+                                65W) - Socket Intel LGA 1200
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    2,300,000 VNĐ
+                                    2,800,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    2,300,000 VNĐ
+                                    2,800,000 VNĐ
                                 </div>
                             </div>
 
@@ -325,45 +124,259 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-dell-20in-e2016-e2018" class="img-products">
-
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh Dell 20in E2016- E2018"
-                                    src="/Upload/Products/000ae180-d968-4e8a-b0ff-9bad8f13554d.jpg?v=1"
-                                    class="img-responsive img-center" />
-                                <div class="sh">
-                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </a>
-                            <a href="/san-pham/man-hinh/man-hinh-dell-20in-e2016-e2018" class="title-products">
-                                M&#224;n h&#236;nh Dell 20in E2016- E2018
-                            </a>
-                            <div class="text-center">
-                                <div class="price-number">
-                                    1,400,000 VNĐ
-                                </div>
-                                <div class="old-price text-center hide">
-                                    1,400,000 VNĐ
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-50">
-                        <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-infinity-sniper-pro-–-27-inch-fhd-fast-ip"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-12400f-upto-44ghz,-6-nhan-12-luo"
                                 class="img-products">
 
                                 <img width="193" height="193"
-                                    alt="M&#224;n h&#236;nh Infinity Sniper Pro – 27 inch FHD Fast IPS / 165Hz"
-                                    src="/Upload/Products/620c28f3-0ad2-4628-8537-3515b548f170.jpg?v=1"
+                                    alt="CPU Intel Core i5-12400F (Upto 4.4Ghz, 6 nh&#226;n 12 luồng, 18MB Cache, 65W) - Socket Intel LGA 1700)"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/5cd85132-9e30-4717-bfa1-63b3bf517d42.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-infinity-sniper-pro-–-27-inch-fhd-fast-ip"
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-12400f-upto-44ghz,-6-nhan-12-luo"
                                 class="title-products">
-                                M&#224;n h&#236;nh Infinity Sniper Pro – 27 inch FHD Fast IPS / 165Hz
+                                CPU Intel Core i5-12400F (Upto 4.4Ghz, 6 nh&#226;n 12 luồng, 18MB Cache, 65W) - Socket
+                                Intel LGA 1700)
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    3,900,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    3,900,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-12100f-4c-8t,-330-ghz-430-ghz,-1"
+                                class="img-products">
+
+                                <img width="193" height="193"
+                                    alt="CPU INTEL Core i3-12100F (4C/8T, 3.30 GHz - 4.30 GHz, 12MB) - 1700"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/96e8cac7-e7bf-4541-8f81-c1de319d4f2c.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-12100f-4c-8t,-330-ghz-430-ghz,-1"
+                                class="title-products">
+                                CPU INTEL Core i3-12100F (4C/8T, 3.30 GHz - 4.30 GHz, 12MB) - 1700
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    2,400,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    2,400,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i7-4770-390ghz,-8m,-4-cores-8-threa"
+                                class="img-products">
+
+                                <img width="193" height="193"
+                                    alt="CPU Intel Core i7 4770 (3.90GHz, 8M, 4 Cores 8 Threads"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/be66d5b0-0227-479e-9072-532df1d3c3f9.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i7-4770-390ghz,-8m,-4-cores-8-threa"
+                                class="title-products">
+                                CPU Intel Core i7 4770 (3.90GHz, 8M, 4 Cores 8 Threads
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    1,500,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    1,500,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-8400-sk-1151-v2-gen-8" class="img-products">
+
+                                <img width="193" height="193" alt="Cpu i5 8400 sk 1151 v2 Gen 8"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/8ab214ff-a9d6-42b4-90d0-ff2d27f4b467.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-8400-sk-1151-v2-gen-8" class="title-products">
+                                Cpu i5 8400 sk 1151 v2 Gen 8
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    2,800,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    2,800,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-10400-290-up-to-410ghz,-12m,-6-c"
+                                class="img-products">
+
+                                <img width="193" height="193"
+                                    alt="CPU Intel Core i5 10400 (2.90 Up to 4.10GHz, 12M, 6 Cores 12 Threads) Box C&#244;ng Ty"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/b4b4f682-2aec-474c-94fa-0206bae3c93d.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i5-10400-290-up-to-410ghz,-12m,-6-c"
+                                class="title-products">
+                                CPU Intel Core i5 10400 (2.90 Up to 4.10GHz, 12M, 6 Cores 12 Threads) Box C&#244;ng Ty
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    4,000,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    4,000,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-10100-360-up-to-430ghz,-6m,-4-co"
+                                class="img-products">
+
+                                <img width="193" height="193"
+                                    alt="CPU Intel Core i3 10100 (3.60 Up to 4.30GHz, 6M, 4 Cores 8 Threads) Box Ch&#237;nh H&#227;ng"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/725c1f4d-4993-4ab6-8453-6056e01ec4f0.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-intel-core-i3-10100-360-up-to-430ghz,-6m,-4-co"
+                                class="title-products">
+                                CPU Intel Core i3 10100 (3.60 Up to 4.30GHz, 6M, 4 Cores 8 Threads) Box Ch&#237;nh
+                                H&#227;ng
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    2,600,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    2,600,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-9700f-gen9" class="img-products">
+
+                                <img width="193" height="193" alt="Cpu i7 9700F Gen9"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/8f0f82b6-2b1d-457d-b68a-a3c03a5d6596.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-9700f-gen9" class="title-products">
+                                Cpu i7 9700F Gen9
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    5,300,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    5,300,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-9400f-gen-9" class="img-products">
+
+                                <img width="193" height="193" alt="Cpu i5 9400F Gen 9"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/bbbd9516-9f18-4d44-a038-cbd3ba24f430.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-9400f-gen-9" class="title-products">
+                                Cpu i5 9400F Gen 9
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    3,300,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    3,300,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i3-9100f-sk-1151-v2-gen9" class="img-products">
+
+                                <img width="193" height="193" alt="Cpu i3 9100F sk 1151 v2 Gen9"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/90be5044-3adc-4aac-9136-e54f618cac21.jpg?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i3-9100f-sk-1151-v2-gen9" class="title-products">
+                                Cpu i3 9100F sk 1151 v2 Gen9
+                            </a>
+                            <div class="text-center">
+                                <div class="price-number">
+                                    1,900,000 VNĐ
+                                </div>
+                                <div class="old-price text-center hide">
+                                    1,900,000 VNĐ
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-50">
+                        <div class="product-item mg-30">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-7700-sk-1151-v1" class="img-products">
+
+                                <img width="193" height="193" alt="Cpu i7 7700 sk 1151 v1"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/8cd93ce0-b464-4a55-aa38-08ab083c4cf7.jfif?v=1"
+                                    class="img-responsive img-center" />
+                                <div class="sh">
+                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
+                                </div>
+                            </a>
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-7700-sk-1151-v1" class="title-products">
+                                Cpu i7 7700 sk 1151 v1
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
@@ -378,24 +391,24 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-hp-20in-lv-2011" class="img-products">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-4570-sk-1150" class="img-products">
 
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh Hp 20in LV 2011"
-                                    src="/Upload/Products/12c52d94-03e7-484a-8bfe-dede8622ebc2.jpg?v=1"
+                                <img width="193" height="193" alt="Cpu i5 4570 sk 1150 "
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/a6a51715-fb03-49a6-9044-feacc29cec4b.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-hp-20in-lv-2011" class="title-products">
-                                M&#224;n h&#236;nh Hp 20in LV 2011
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-4570-sk-1150" class="title-products">
+                                Cpu i5 4570 sk 1150
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    1,300,000 VNĐ
+                                    700,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    1,300,000 VNĐ
+                                    700,000 VNĐ
                                 </div>
                             </div>
 
@@ -403,24 +416,24 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-25in-hp-model-25f" class="img-products">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/xeon-1231-v3-sk-1150" class="img-products">
 
-                                <img width="193" height="193" alt="M&#224;n H&#236;nh 25in HP Model 25F"
-                                    src="/Upload/Products/f81f69ea-2ad8-4452-8b54-0bbe22c7c21a.png?v=1"
+                                <img width="193" height="193" alt="Xeon 1231 V3 sk 1150"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/7a0f0f5d-69f6-4ec6-92aa-94c7a3fef50c.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-25in-hp-model-25f" class="title-products">
-                                M&#224;n H&#236;nh 25in HP Model 25F
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/xeon-1231-v3-sk-1150" class="title-products">
+                                Xeon 1231 V3 sk 1150
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    1,800,000 VNĐ
+                                    2,200,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    1,800,000 VNĐ
+                                    2,200,000 VNĐ
                                 </div>
                             </div>
 
@@ -428,24 +441,24 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-s22c300" class="img-products">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-3570-socket-1155" class="img-products">
 
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh samsung S22C300"
-                                    src="/Upload/Products/d550cd0c-593d-40ba-b35f-01ffd96e5cf2.jpg?v=1"
+                                <img width="193" height="193" alt="Cpu i5 3570 socket 1155"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/bef3ea06-b4c8-49bb-89ab-2b5ba7e5e625.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-s22c300" class="title-products">
-                                M&#224;n h&#236;nh samsung S22C300
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i5-3570-socket-1155" class="title-products">
+                                Cpu i5 3570 socket 1155
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    1,200,000 VNĐ
+                                    450,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    1,200,000 VNĐ
+                                    450,000 VNĐ
                                 </div>
                             </div>
 
@@ -453,135 +466,38 @@
                     </div>
                     <div class="col-md-3 col-sm-4 col-50">
                         <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-dell-e2414h-led" class="img-products">
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-4790-36ghz-sk-1150" class="img-products">
 
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh dell E2414H led"
-                                    src="/Upload/Products/8fcfea99-4cef-41ec-9db1-439a9c453184.jpg?v=1"
+                                <img width="193" height="193" alt="Cpu i7 4790 3.6Ghz sk 1150"
+                                    src="https://www.vitinhtrongthuy.com/Upload/Products/34a2a8f2-da2a-4382-a1be-2783740c4a6b.jpg?v=1"
                                     class="img-responsive img-center" />
                                 <div class="sh">
                                     <div class="vi-more"><i class="fa fa-search-plus"></i></div>
                                 </div>
                             </a>
-                            <a href="/san-pham/man-hinh/man-hinh-dell-e2414h-led" class="title-products">
-                                M&#224;n h&#236;nh dell E2414H led
+                            <a href="/san-pham/cpu-bo-vi-xu-ly/cpu-i7-4790-36ghz-sk-1150" class="title-products">
+                                Cpu i7 4790 3.6Ghz sk 1150
                             </a>
                             <div class="text-center">
                                 <div class="price-number">
-                                    1,700,000 VNĐ
+                                    1,600,000 VNĐ
                                 </div>
                                 <div class="old-price text-center hide">
-                                    1,700,000 VNĐ
+                                    1,600,000 VNĐ
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-4 col-50">
-                        <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-hp-p200" class="img-products">
 
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh HP P200"
-                                    src="/Upload/Products/352db730-894d-4844-b81d-93e76a6bef04.jpg?v=1"
-                                    class="img-responsive img-center" />
-                                <div class="sh">
-                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </a>
-                            <a href="/san-pham/man-hinh/man-hinh-hp-p200" class="title-products">
-                                M&#224;n h&#236;nh HP P200
-                            </a>
-                            <div class="text-center">
-                                <div class="price-number">
-                                    1,300,000 VNĐ
-                                </div>
-                                <div class="old-price text-center hide">
-                                    1,300,000 VNĐ
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-50">
-                        <div class="product-item mg-30">
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-32-in-model-s32e36f" class="img-products">
-
-                                <img width="193" height="193" alt="M&#224;n h&#236;nh samsung 32 in. Model : S32E36F"
-                                    src="/Upload/Products/fd7f7968-d5af-41f8-872a-8369e7c589d6.jpg?v=1"
-                                    class="img-responsive img-center" />
-                                <div class="sh">
-                                    <div class="vi-more"><i class="fa fa-search-plus"></i></div>
-                                </div>
-                            </a>
-                            <a href="/san-pham/man-hinh/man-hinh-samsung-32-in-model-s32e36f" class="title-products">
-                                M&#224;n h&#236;nh samsung 32 in. Model : S32E36F
-                            </a>
-                            <div class="text-center">
-                                <div class="price-number">
-                                    1,800,000 VNĐ
-                                </div>
-                                <div class="old-price text-center hide">
-                                    1,800,000 VNĐ
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                 </div>
-
-                <script src="https://www.vitinhtrongthuy.com/assets/frontend/js/shopcart/elnino.shopcart.js"></script>
-
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Giỏ hàng hiện có: (<span id="numcart"
-                                        class="text-danger">0</span>) sản phẩm</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div id="showCrt"></div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Mua tiếp</button>
-                                <button type="button" class="btn btn-primary" onclick="PostShopcart()">Xem giỏ
-                                    hàng</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <script src="https://www.vitinhtrongthuy.com/assets/frontend/js/magnific/jquery.magnific-popup.js?v=1">
-                </script>
-                <script type="text/javascript">
-                $(document).ready(function() {
-                    $('.popup-gallery').magnificPopup({
-                        delegate: '.a',
-                        type: 'image',
-                        tLoading: 'Loading image #%curr%...',
-                        mainClass: 'mfp-img-mobile',
-                        gallery: {
-                            enabled: true,
-                            navigateByImgClick: true,
-                            preload: [0,
-                                1
-                            ] // Will preload 0 - before current, and 1 after the current image
-                        },
-                        image: {
-                            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-                            titleSrc: function(item) {
-                                return item.el.attr('title') +
-                                    '<small>by www.vitinhtrongthuy.com</small>';
-                            }
-                        }
-                    });
-                });
-
-                function ChangeIma(url) {
-                    $("#detail-img").attr("href", url);
-                    $("#detail-img1").attr("src", url);
-                }
-                </script>
+                <ul class="pagination">
+                    <li class='active'><a href='/san-pham/cpu-bo-vi-xu-ly?page=1'>1</a></li>
+                    <li><a href='/san-pham/cpu-bo-vi-xu-ly?page=2'>2</a></li>
+                    <li><a href='/san-pham/cpu-bo-vi-xu-ly?page=3'>3</a></li>
+                </ul>
+                <div class="clr"></div>
 
             </div>
 
