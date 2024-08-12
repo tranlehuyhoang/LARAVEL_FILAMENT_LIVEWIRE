@@ -8,7 +8,41 @@ use Illuminate\Support\Facades\Cookie;
 
 class CartManagement
 {
+    static public function addItemToCartWithQuantity($product_id, $quantity)
+    {
+        $cart_items = self::getCartItemsFromCookie();
+        $existing_item = null;
 
+        foreach ($cart_items as $key => $item) {
+            if ($item['product_id'] == $product_id) {
+                $existing_item = $key;
+                break;
+            }
+        }
+
+        if ($existing_item !== null) {
+            // Update the quantity and total amount for the existing item
+            $cart_items[$existing_item]['quantity'] += $quantity;
+            $cart_items[$existing_item]['total_amount'] = $cart_items[$existing_item]['quantity'] * $cart_items[$existing_item]['unit_amount'];
+        } else {
+            // Add the new item to the cart
+            $product = Product::where('id', $product_id)->first(['id', 'name', 'price', 'images']);
+            if ($product) {
+                $cart_items[] = [
+                    'product_id' => $product->id,
+                    'name' => $product->name,
+                    'image' => $product->images[0],
+                    'quantity' => $quantity,
+                    'unit_amount' => $product->price,
+                    'total_amount' => $product->price * $quantity
+                ];
+            }
+        }
+
+        // Save the updated cart items back to the cookie
+        self::addCartItemsToCookie($cart_items);
+        return count($cart_items);
+    }
     static public function addItemToCart($product_id)
     {
         $cart_items = self::getCartItemsFromCookie();

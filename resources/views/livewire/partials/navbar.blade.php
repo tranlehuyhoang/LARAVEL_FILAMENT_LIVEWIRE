@@ -1,111 +1,95 @@
-<header
-    class="flex z-50 sticky top-0 flex-wrap md:justify-start md:flex-nowrap w-full bg-white text-sm py-3 md:py-0 dark:bg-gray-800 shadow-md">
-    <nav class="max-w-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8" aria-label="Global">
-        <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script> 
-<x-livewire-alert::flash />
-        <div class="relative md:flex md:items-center md:justify-between">
-            <div class="flex items-center justify-between">
-                <a class="flex-none text-xl font-semibold dark:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="/" aria-label="Brand">DCodeMania</a>
-                <div class="md:hidden">
-                    <button type="button"
-                        class="hs-collapse-toggle flex justify-center items-center w-9 h-9 text-sm font-semibold rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                        data-hs-collapse="#navbar-collapse-with-animation"
-                        aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
-                        <svg class="hs-collapse-open:hidden flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="3" x2="21" y1="6" y2="6" />
-                            <line x1="3" x2="21" y1="12" y2="12" />
-                            <line x1="3" x2="21" y1="18" y2="18" />
-                        </svg>
-                        <svg class="hs-collapse-open:block hidden flex-shrink-0 w-4 h-4"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
+<div>
 
-            <div id="navbar-collapse-with-animation"
-                class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
-                <div
-                    class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-slate-700 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500">
-                    <div
-                        class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid dark:divide-gray-700">
-
-                        <a class="font-medium text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
-                        {{ request()->is('/') ? 'text-blue-500' : '' }}"
-                            href="/" aria-current="page" wire:navigate>
-                            Home
-                        </a>
-
-                        <a class="font-medium text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
-                        {{ request()->is('categories') ? 'text-blue-500' : '' }}"
-                            href="/categories" wire:navigate>
-                            Categories
-                        </a>
-
-                        <a class="font-medium text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600
-                        {{ request()->is('products') ? 'text-blue-500' : '' }}"
-                            href="/products" wire:navigate>
-                            Products
-                        </a>
-
-
-
-                        <a class="font-medium flex items-center text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/cart" wire:navigate>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                stroke-width="1.5" stroke="currentColor" class="flex-shrink-0 w-5 h-5 mr-1">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-                            </svg>
-                            <span class="mr-1">Cart</span> <span
-                                class="py-0.5 px-1.5 rounded-full text-xs font-medium bg-blue-50 border border-blue-200 text-blue-600">{{$total_count}}</span>
-                        </a>
-
-                        <div class="pt-3 md:pt-0">
-                            <a class="py-2.5 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                href="/login" wire:navigate>
-                                <svg class="flex-shrink-0 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24"
-                                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                                    <circle cx="12" cy="7" r="4" />
-                                </svg>
-                                Log in
+    <div id="numcart1" class="hide"></div>
+<div class="hide" itemscope itemtype="http://schema.org/LocalBusiness">
+    <div itemprop="name">Vi Tính Hoàng Tin - Chuẩn đoán và khắc phục dùm Quý khách trong thời gian nhanh nhất có thể
+        với giá cả phải chăng</div>
+    <p itemprop="descripton">
+        Chúng tôi là một cửa hàng tin học, chuyên bán linh kiện vi tính, laptop, máy bộ văn phòng trường học quán
+        net vv...
+        Ngoài ra chúng tôi nhận thu mua thanh lý máy tính - laptop , thiết bị tin học công ty , quán net với giá thu
+        mua cao, hoa hồng cho người giới thiệu. CHỈ TIÊU YÊU CẦU MÀ CHÚNG TÔI ĐỀ RA: Chỉ tiêu bán hàng: Hàng chuẩn,
+        chất lượng, chính hãng, bảo hành 1 đổi 1 uy tín, giao hàng tận nơi trong nội thành và các tỉnh toàn quốc...
+        Cách thức mua hàng, thanh lý: Trực tiếp đến tận nơi kiểm tra, test nhanh gọn, tiền mặt hoặc chuyển khoản
+        liền nhanh nhất cho khách hàng...Với sự nhiệt huyết yêu nghề nghiệp, phúc vụ tận tính cho khách hàng, chúng
+        tồi quyết tâm chăm sóc khách hàng tốt nhất. vừa long khách đến vừa lòng khách đi. Sự tin tưởng và ủng hộ của
+        khách hàng trong suốt thời gian qua là nguồn động viên to lớn trên bước đường phát triển của Vi Tính Trọng
+        Thủy. Chúng tôi xin hứa sẽ không ngừng hoàn thiện, phục vụ khách hàng tốt nhất để luôn xứng đáng với niềm
+        tin ấy."
+    </p>
+    <p>Phone: <span itemprop="telephone" content="0938 114 419">0938 114 419</span></p>
+    <address itemscope itemtype="http://schema.org/PostalAddress" itemprop="address">
+        <span itemprop="streetAddress">SỐ 12, ĐƯỜNG TA15, THỚI AN, QUẬN 12, TP HCM</span>
+        <span itemprop="addressLocality">QUẬN 12</span>,
+        <span itemprop="addressRegion">TP HCM</span>
+    </address>
+</div>
+<div class="menu-r">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table style="width:100%;">
+                    <tr>
+                        <td>
+                            <a href="/">
+                                <img height="85" width="501" src="{{ asset('assets/frontend/img/logo-1.png') }}?v=1" alt="Vi Tính Trọng Thủy" class="img-responsive" />
                             </a>
-                        </div>
+                            
+                        </td>
+                        <td>
+                            <button type="button" class="btn-s hidden-md hidden-lg"
+                                onclick="javascript: $('.menu').toggleClass('hidden-xs hidden-sm');"><i
+                                    class="fa fa-bars fa-lg"></i></button>
+                        </td>
 
-                        {{-- <div class="hs-dropdown [--strategy:static] md:[--strategy:fixed] [--adaptive:none] md:[--trigger:hover] md:py-4">
-                <button type="button" class="flex items-center w-full text-gray-500 hover:text-gray-400 font-medium dark:text-gray-400 dark:hover:text-gray-500">
-                  User Name
-              <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-              </button>
-  
-              <div class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-48 hidden z-10 bg-white md:shadow-md rounded-lg p-2 dark:bg-gray-800 md:dark:border dark:border-gray-700 dark:divide-gray-700 before:absolute top-full md:border before:-top-5 before:start-0 before:w-full before:h-5">
-                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                  My Orders
-                </a>
-  
-                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                  My Account
-                </a>
-                <a class="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" href="#">
-                  Logout
-                </a>
-              </div>
-            </div> --}}
-
-                    </div>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <div class="header-giohang">
+                    <a class="dps-ht" id="dps-ht-header" data-id="1" data-type="22" href="#"><i
+                            class="fa fa-phone"></i><span class="text-danger">0938 114 419</span></a>
+                    <span class="cr">-</span>
+                    <a href="/gio-hang" title="Xem giỏ hàng"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a>
+                    <span class="cr">-</span>
+                    <a class="dps-ht" id="dps-em" data-id="2" data-type="4" href="#"
+                        style="white-space:nowrap;margin-bottom:2px;"></a>
                 </div>
+                <table class="search-reg">
+                    <tr>
+                        <td><input type="text" id="txt-search" placeholder="Vui lòng nhập từ khóa" /></td>
+                        <td><button type="button"><i class="fa fa-search"></i> Tìm kiếm</button></td>
+                    </tr>
+                </table>
             </div>
         </div>
-    </nav>
-</header>
+    </div>
+</div>
+<div class="topheader">
+    <div class="container">
+        <ul class="menu no-ul hidden-xs hidden-sm">
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/gioi-thieu">Giới thiệu</a></li>
+            <li>
+                <a href="/san-pham">Sản phẩm</a>
+
+            </li>
+            <li>
+                <a href="/chinh-sach/ban-bao-gia-thu-mua-linh-kien-cu">BẢN B&#193;O GI&#193; THU MUA LINH KIỆN
+                    CŨ</a>
+            </li>
+            <li>
+                <a href="/chinh-sach/chinh-sach-bao-hanh">CH&#205;NH S&#193;CH BẢO H&#192;NH</a>
+            </li>
+            <li>
+                <a href="/chinh-sach/huong-dan-thanh-toan">Hướng dẫn thanh to&#225;n</a>
+            </li>
+
+            <li><a href="/tin-tuc">Tin tức</a></li>
+            <li><a href="/lien-he">Liên hệ</a></li>
+            <li><a href="/gio-hang" class="hidden-md hidden-lg">Giỏ hàng</a></li>
+        </ul>
+    </div>
+</div>
+
+</div>
