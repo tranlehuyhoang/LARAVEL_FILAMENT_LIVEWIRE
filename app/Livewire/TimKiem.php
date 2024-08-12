@@ -4,12 +4,9 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class TimKiem extends Component
 {
-    use WithPagination;
-
     public $searchText;
     public $totalResults;
 
@@ -24,10 +21,10 @@ class TimKiem extends Component
         // Get all active products with names containing the search text
         $products = Product::where('is_active', 1)
             ->where('name', 'like', '%' . $this->searchText . '%')
-            ->paginate(16);
+            ->get();
 
         // Get the total number of results found
-        $this->totalResults = $products->total();
+        $this->totalResults = $products->count();
 
         return view('livewire.tim-kiem', [
             'products' => $products,
