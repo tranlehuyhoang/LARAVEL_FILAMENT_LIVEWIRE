@@ -1,4 +1,5 @@
 <div>
+   
 
     <link
         href="{{ asset('assets/frontend/font-awesome/font-awesome-4.3.0/font-awesome-4.3.0/css/font-awesome.min.css') }}?v=12082024"
@@ -63,7 +64,7 @@
                     @foreach($products as $product)
                         <div class="col-md-3 col-sm-4 col-50">
                             <div class="product-item mg-30">
-                                <a  href="{{ url('/san-pham/' . $product->category->slug . '/' . $product->slug) }}" class="img-products">
+                                <a  wire:navigate href="{{ url('/san-pham/' . $product->category->slug . '/' . $product->slug) }}" class="img-products">
                                     <img width="193" height="193" alt="{{ $product->name }}"
                                     src="{{ Storage::url(is_array($product->images) ? $product->images[0] : $product->images) }}" class="img-responsive img-center" />
                                     <div class="sh">

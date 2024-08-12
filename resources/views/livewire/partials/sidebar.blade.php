@@ -38,7 +38,7 @@
         <ul class="no-ul">
             @foreach($categories as $category)
             <li class="n-w br-d" data-class="mcc" data-id="mcc-63" data-click="clickToggle">
-                <a href="/san-pham/{{ $category->slug ?? '#' }}" wire:key='{{ $category->id }}'><i class="fa fa-angle-right"></i>{{ $category->name }}</a>
+                <a wire:navigate href="/san-pham/{{ $category->slug ?? '#' }}" wire:key='{{ $category->id }}'><i class="fa fa-angle-right"></i>{{ $category->name }}</a>
             </li>
             @endforeach
         </ul>
@@ -76,22 +76,7 @@
                     href="https://www.facebook.com/vitinhtrongthuy/">Vi Tính Trọng Thủy</a></blockquote>
         </div>
     </div>
-    <div class="blog-heading"><i class="fa fa-newspaper-o"></i> Tin tức mới</div>
-    <div class="blog-cata-content form-group">
-        <div class="form-group">
-            <a href="/tin-tuc/may-tinh-re-nhat-cho-sinh-vien-hien-nay-ben-dep" class="blog-name">
-                M&#225;y t&#237;nh rẻ nhất cho sinh vi&#234;n hiện nay bền đẹp
-            </a>
-            <p class="blog-info">Đăng lúc | 03/07/2020</p>
-        </div>
-        <div class="form-group">
-            <a href="/tin-tuc/bo-vi-tinh-van-phong-gia-re-nhat,-lai-cuc-ben-chi-" class="blog-name">
-                Bộ vi t&#237;nh văn ph&#242;ng gi&#225; rẻ nhất, lại cực bền chỉ 3 triệu đồng/ m&#225;y
-            </a>
-            <p class="blog-info">Đăng lúc | 29/06/2020</p>
-        </div>
-
-    </div>
+  
     <div class="blog-heading">
         <i class="fa fa-question"></i> Thống Kê Truy Cập
     </div>

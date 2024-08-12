@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Page Title' }}</title>
     <link rel="SHORTCUT ICON" href="/favicon.ico" />
     <link rel="canonical" href="./" />
     <link
@@ -25,6 +24,20 @@
 
 
 </body>
+<style>
+    @media (max-width: 992px) {
+    .col-md-9 {
+        width: 100%;
+    }
+}
+ 
+@media (max-width: 992px) {
+    .col-sm-3 {
+        width: 100%;
+    }
+}
+ 
+</style>
 <x-livewire-alert::scripts />
 
 </html>
