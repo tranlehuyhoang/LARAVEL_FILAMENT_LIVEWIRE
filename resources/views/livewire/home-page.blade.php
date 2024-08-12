@@ -49,11 +49,11 @@
     <div class="container">
         <div class="slided">
             <ul class="bxslider">
-                <li><img style="width:100%;" src="/Upload/SlideShow/ada9b951-d340-456b-8238-87b27060c53f.jpg?v=1" />
+                <li><img style="width:100%;" src="https://matkinhsaigon.com.vn/img/slider/1642229399_img.jpg" />
                 </li>
-                <li><img style="width:100%;" src="/Upload/SlideShow/b5c1181c-20d3-44f0-84ad-c29771b681b5.jpg?v=1" />
+                <li><img style="width:100%;" src="https://matkinhsaigon.com.vn/img/slider/1715744127-Tròng_Kính_ZEISS_ClearView_Poter.jpg" />
                 </li>
-                <li><img style="width:100%;" src="/Upload/SlideShow/34d815d5-ad49-4bb7-a0cc-592f5537b7a1.jpg?v=1" />
+                <li><img style="width:100%;" src="https://matkinhsaigon.com.vn/img/slider/1688351415-Baner_Doi_Mau_ZEISS_PhotoFusionX_1.jpg" />
                 </li>
 
             </ul>

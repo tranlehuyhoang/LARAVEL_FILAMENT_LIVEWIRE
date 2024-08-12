@@ -7,7 +7,7 @@
                         <tr>
                             <td>
                                 <a href="/" wire:navigate><img height="85" width="501"
-                                        src="https://www.vitinhtrongthuy.com/assets/frontend/img/logo-1.png?v=1"
+                                        src="https://matkinhsaigon.com.vn/img/setting/1671614870-Logo_mksg_2023.png"
                                         alt="Vi Tính Trọng Thủy" class="img-responsive" /></a>
                             </td>
                             <td>
@@ -30,7 +30,8 @@
                     <table class="search-reg">
                         <tr>
                             <td><input type="text" id="txt-search" placeholder="Vui lòng nhập từ khóa" /></td>
-                            <td><button type="button"><i class="fa fa-search"></i> Tìm kiếm</button></td>
+                            <td><button  type="button"><i class="fa fa-search"></i> Tìm kiếm</button></td>
+
                         </tr>
                     </table>
                 </div>

@@ -92,7 +92,32 @@
                         </div>
                     @endforeach
                 </div>
-        
+                <div class="pagination">
+                    @if($products->hasPages())
+                        <ul class="pagination">
+                            {{-- Previous Page Link --}}
+                            @if($products->onFirstPage())
+                                <li class="disabled"><span>&laquo;</span></li>
+                            @else
+                                <li><a wire:navigate href="{{ $products->previousPageUrl() . '?seachtext=' . $searchText }}" rel="prev">&laquo;</a></li>
+                            @endif
+                
+                            {{-- Pagination Elements --}}
+                            @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                                <li class="{{ $page == $products->currentPage() ? 'active' : '' }}">
+                                    <a wire:navigate href="{{ $url . '?seachtext=' . $searchText }}">{{ $page }}</a>
+                                </li>
+                            @endforeach
+                
+                            {{-- Next Page Link --}}
+                            @if($products->hasMorePages())
+                                <li><a wire:navigate href="{{ $products->nextPageUrl() . '?searchtext=' . $searchText }}" rel="next">&raquo;</a></li>
+                            @else
+                                <li class="disabled"><span>&raquo;</span></li>
+                            @endif
+                        </ul>
+                    @endif
+                </div>
 
 
             </div>
